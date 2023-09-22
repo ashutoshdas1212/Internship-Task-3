@@ -1,0 +1,404 @@
+label{
+  font-size:25px;
+}
+input[type="text"],input[type="date"],input[type="number"]
+{
+  height:50px;
+  weight:80px;
+}
+
+.row
+{
+  margin-bottom:10px ;
+}
+.container
+{
+  margin-top: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  font-family: 'Poppins', sans-serif;
+}
+#br{
+  height:60px;
+}
+input#ck {
+            width: 20px;
+            height: 20px;
+        }
+#testSelect1_multiSelect {
+  width: 300px;
+}
+#pos_multiSelect {
+  width: 300px;
+}
+
+ input[type="radio"] {
+    width: 25px; /* Adjust the width as needed */
+    height: 25px; /* Adjust the height as needed */
+  }
+
+  /* Optional: Add some styling to improve visibility */
+  
+
+.col-md-12 b h3:before {
+  background-color: #c50000;
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  width: 75px;
+  margin-bottom: 0.25em;
+}
+
+label {
+  color: rgb(0, 0, 0);
+  font-weight: normal;
+}
+
+body {
+  font-size: x-large;
+  background-color: #f2f5fa;
+  /* background: url('../bk1.jpg') no-repeat center center/cover; */
+  z-index: -2;
+
+
+}
+/* input
+{
+  padding: 2px !important;
+  border: 1px solid red !important;
+  border-radius: 5px !important;
+} */
+
+.multiselect-input
+{
+  padding: 2px;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+#btn-add {
+    z-index: 39;
+    width: 250px;
+    min-height: 15px;
+   border-radius: 25px;
+    position: relative;
+}
+
+#btn-save {
+  z-index: 39;
+    width: 250px;
+    min-height: 15px;
+   border-radius: 25px;
+    position: relative;
+}
+
+#btn-clear {
+  z-index: 39;
+    width: 250px;
+    min-height: 15px;
+   border-radius: 25px;
+    position: relative;
+}
+#btn-search {
+  z-index: 39;
+    width: 250px;
+    min-height: 15px;
+   border-radius: 25px;
+    position: relative;
+}
+
+#btn-reset {
+  z-index: 39;
+    width: 250px;
+    min-height: 15px;
+  border-radius: 25px;
+    position: relative;
+}
+
+
+
+.multiselect {
+  width: 200px;
+}
+
+/* Apply slower transitions to buttons */
+
+
+button{
+  transition: background-color 1s ease-out;
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 12px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition-duration: 1s;
+}
+
+button:active,
+button:hover {
+  background-color: red;
+}
+
+@media (min-width: 768px) {
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+button:hover {
+  background-color: #4CAF50;
+  /* Green */
+
+  color: white;
+
+}
+
+button:active {
+  transition: background-color 1s ease-out;
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(10px);
+  transition-duration: 1s;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+#dataTable thead th {
+  background-color: #333333;
+
+  color: white;
+
+  z-index: 1;
+}
+
+
+#dataTable tbody tr:nth-child(even) {
+    background-color: greenyellow !important;
+    /* Change to your desired color */
+  }
+
+  /* Change background color of odd rows */
+  #dataTable tbody tr:nth-child(odd) {
+    background-color: yellow !important;
+    /* Change to your desired color */
+  }
+
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color:yellow;
+}
+table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color:greenyellow !important;
+}
+
+@keyframes moveup {
+  100% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+}
+
+/* #apply {
+  margin-left: 450px;
+}
+
+#clear {
+  margin-right: 450px;
+}
+
+#search {
+  margin-left: 450px;
+}
+
+#reset {
+  margin-right: 450px;
+} */
+
+#home {
+  display: flex;
+  flex-direction: column;
+  padding: 3px 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+#home:before {
+  content: "";
+  position: absolute;
+  background: url('../bg.jpg') no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.89;
+  background-size: contain;
+  margin-top: 120px;
+
+
+}
+
+#cnt {
+  display: flex;
+  flex-direction: column;
+  padding: 3px 200px;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+#cnt:before {
+  content: "";
+  position: absolute;
+  background: url('../back1.jpeg') no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.89;
+  background-size: contain;
+}
+
+ #dataTable {
+    font-size: 25px; 
+  }
+
+  /* Optionally, target the header cells */
+  #dataTable th {
+    font-size: 25px; 
+  }
+
+  /* Optionally, target the data cells */
+  #dataTable td {
+    font-size: 25px; 
+  }
+
+
+.thirteen h1 {
+  position:relative; font-size:30px; font-weight:700;  letter-spacing:0px; text-transform:uppercase; width:300px; text-align:center; margin:auto; white-space:nowrap; border:2px solid #222;padding:5px 11px 3px 11px;
+}
+.thirteen h1:before, .thirteen h1:after {
+    background-color: #c50000;
+    position:absolute; 
+    content: '';
+    height: 7px;
+
+    width: 7px; border-radius:50%;
+    bottom: 12px;
+}
+.thirteen h1:before {
+   left:-20px;
+}
+.thirteen h1:after {
+   right:-20px;
+}
+
+.one h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+.one h1:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #b80000;
+}
+.one h1:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+}
+
+
+ /* .form-control {
+  width: 100%;
+}
+.multiselect-container {
+  box-shadow: 0 3px 12px rgba(0,0,0,.175);
+  margin: 0;
+}
+.multiselect-container .checkbox {
+  margin: 0;
+}
+.multiselect-container li {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+.multiselect-container li a {
+  line-height: 25px;
+  margin: 0;
+  padding:0 35px;
+}
+.custom-btn {
+  width: 100% !important;
+}
+.custom-btn .btn, .custom-multi {
+  text-align: left;
+  width: 100% !important;
+}
+.dropdown-menu > .active > a:hover {
+  color:inherit;
+} */

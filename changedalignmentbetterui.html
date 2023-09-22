@@ -1,0 +1,590 @@
+<html>
+
+<head>
+  <title>DataTable</title>
+
+  <link href="styles/multiselect.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="styles/mystyles.css" />
+  <link rel="stylesheet" href="styles/card.css" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+</head>
+
+<body style="background-color: beige;">
+  <form>
+    <div id="container" style="background-color: white;">
+      <div class="basic-card basic-card-light" style="margin-top: 10px;">
+        <form class="card-content">
+
+
+
+          <div class="one">
+            <h1>Employee Form</h1>
+          </div>
+          <div id="br"></div>
+          <div class="row">
+
+            <div class="col-md-2">
+              <label for="name">Name</label>
+            </div>
+            <div class="col-md-2">
+              <input required type="text" id="name" class="required-input" />
+
+            </div>
+            <div class="col-md-2">
+              <label for="testSelect1">Position</label>
+            </div>
+
+
+
+            <div class="col-md-2">
+              <!-- <select  id="testSelect1" class="multiselect" multiple="multiple" role="multiselect">
+                <option value="multiselect-all">Select All</option>
+                <option value="Accountant">Accountant</option>
+                <option value="Junior Technical Author">Junior Technical Author</option>
+                <option value="Software Engineer">Software Engineer</option>
+              </select> -->
+              <select id="testSelect1" multiple class="multiselect">
+                <option value="Accountant">Accountant</option>
+                <option value="Junior Technical Author">Junior Technical Author</option>
+                <option value="Software Engineer">Software Engineer</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+
+              <label for="salary">Salary</label>
+            </div>
+            <div class="col-md-2">
+
+              <input type="text" class="required-input" required class="input-data" id="salary"
+                placeholder="Salary in USD" />
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-2">
+              <label for="start_date">Start Date</label>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="required-input" required id="start_date" style="margin-left: 0px;width:280px;"
+                 class="input-data" />
+
+            </div>
+            <div class="col-md-2">
+              <label for="office">Office</label>
+            </div>
+            <div class="col-md-2">
+              <input type="text" class="required-input" style="width:300px" required id="office" class="input-data" />
+            </div>
+
+
+            <div class="col-md-2">
+              <label for="ext">Extension</label>
+            </div>
+            <div class="col-md-2">
+              <input type="number" class="required-input" required id="ext" class="input-data" />
+            </div>
+            <div id="br"></div>
+
+            <div class="row">
+              <center>
+                <div class="col-md-12">
+                  If your age is above 18:
+
+                    <input type="radio" id="yes" name="chkbxN" value="YES"> <label for="yes">YES</label>
+
+                  <input type="radio" id="no" name="chkbxN" value="NO"> <label for="no">NO</label>
+                </div>
+                <div class="col-md-12" <p>
+                  <input type="checkbox" id="ck" value="yes">
+                  <label for="ck" style="display: inline;">I have read and agreed to the Terms and Conditions.</label>
+                  </p>
+
+                </div>
+
+              </center>
+            </div>
+
+
+
+            <div class="row mb-3">
+              <div class="col-lg-4">
+                <button type="button" style="margin-left:1000px" onclick="add()" id="btn-add"
+                  class="btn btn-secondary col-lg-12"" id=" add">ADD</button>
+              </div>
+              <div class="col-lg-4">
+                <button type="button" style="margin-left:350px" onclick="save()" id="btn-save"
+                  class="btn btn-secondary col-lg-12" id="apply">SAVE</button>
+              </div>
+              <div class="col-lg-4">
+                <button style="margin-left:-300px" onclick="resetInputs()" id="btn-clear"
+                  class="btn btn-secondary col-lg-12""id=" clear">CLEAR</button>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+
+        </form>
+
+      </div>
+    </div>
+    </div>
+
+    <div id="container" style="background-color: white;">
+      <div class="basic-card basic-card-light" style="margin-top: 10px;">
+        <div class="card-content">
+
+          <div class="one">
+            <h1>search</h1>
+            <div id="br"></div>
+          </div>
+          <div class="row">
+
+            <div class="col-md-2">
+              <label for="searchName">Name</label>
+            </div>
+            <div class="col-md-2">
+              <input type="text" required id="searchName" style="margin-left: 27px" class="input-data" />
+            </div>
+
+
+            <div class="col-md-2">
+              <label for="search_date">Start Date</label>
+            </div>
+            <div class="col-md-2">
+              <input type="date" class="required-input" required id="search_date"
+                style="margin-left: 0px; width: 295px;" placeholder="YYYY/MM/DD" class="input-data" />
+            </div>
+
+
+
+            <div class="col-md-2">
+              <label for="pos">Position</label>
+            </div>
+            <div class="col-md-2">
+              <select id="pos"  multiple class="multiselect" style="height: 40px;">
+
+                <option value="Accountant">Accountant</option>
+                <option value="Junior Technical Author">Junior Technical Author</option>
+                <option value="Software Engineer">Software Engineer</option>
+              </select>
+
+            </div>
+          </div>
+
+          <div id="br"></div>
+
+
+          <div class="row">
+
+            <div class="row mb-3">
+              <div class="col-lg-4">
+                <button type="button" style="margin-left:1200px" onclick="applyFilter()" id="btn-search"
+                  class="btn btn-secondary col-lg-12"">SEARCH</button>
+              </div>
+              <div class=" col-lg-4">
+                  <button type="button" style="margin-left:500px" onclick="reset()" id="btn-reset"
+                    class="btn btn-secondary col-lg-12">RESET</button>
+              </div>
+
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <table id="dataTable" class="display" style="width: 100%">
+        <thead>
+          <tr class="table-header">
+
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Start Date</th>
+            <th>Office</th>
+            <th>Extension</th>
+            <th>Above 18</th>
+            <th>Agreed terms & Condition</th>
+            <th>Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <!-- Load your multiselect script -->
+    <script src="multiselect.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <!-- Load other scripts that depend on jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load DataTables after jQuery -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="script.js"></script>
+
+
+    <!-- Add Bootstrap JavaScript library -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+
+    <script>
+      let filteredData = data;
+
+
+      document
+        .multiselect("#testSelect1")
+        .setCheckBoxClick("checkboxAll", function (target, args) {
+          console.log(
+            "Checkbox 'Select All' was clicked and got value ",
+            args.checked
+          );
+        })
+        .setCheckBoxClick("1", function (target, args) {
+          console.log(
+            "Checkbox for item with value '1' was clicked and got value ",
+            args.checked
+          );
+        });
+      document
+        .multiselect("#pos")
+        .setCheckBoxClick("checkboxAll", function (target, args) {
+          console.log(
+            "Checkbox 'Select All' was clicked and got value ",
+            args.checked
+          );
+        })
+        .setCheckBoxClick("1", function (target, args) {
+          console.log(
+            "Checkbox for item with value '1' was clicked and got value ",
+            args.checked
+          );
+        });
+
+
+
+
+
+
+      function updateDataTable() {
+
+
+        $("#dataTable").DataTable().clear().rows.add(filteredData).draw();
+      }
+
+
+
+      function deleteRecordByValues(index) {
+        const response = confirm("Do you want to delete the record?");
+        if (response) {
+          const recordIndex = filteredData.findIndex(
+            (item) => item.id === (index + 1).toString()
+          );
+
+          if (recordIndex !== -1) {
+            filteredData.splice(recordIndex, 1);
+            updateDataTable();
+            resetInputs();
+            selectedRow = undefined; // Reset selectedRow when a record is deleted
+          }
+        }
+      }
+
+
+
+
+
+
+
+
+
+      function editRecordByValues(index) {
+        const recordIndex = filteredData.findIndex(
+          (item) => item.id === (index + 1).toString()
+        );
+
+        if (recordIndex !== -1) {
+          const record = filteredData[recordIndex];
+          if (record.Above18 == "Yes") {
+            document.getElementById("yes").checked = true;
+          } else {
+            document.getElementById("no").checked = true;
+          }
+          if (record.Agreed == "Yes") {
+            document.getElementById("ck").checked = true;
+          } else {
+            document.getElementById("ck").checked = false;
+          }
+          document.getElementById("name").value = record.name;
+          document.getElementById("salary").value = record.salary;
+          document.getElementById("start_date").value = record.start_date;
+          document.getElementById("office").value = record.office;
+          document.getElementById("ext").value = record.extn;
+
+          const positionSelect = document.getElementById("testSelect1");
+          for (let i = 0; i < positionSelect.options.length; i++) {
+            positionSelect.options[i].selected = record.position.includes(
+              positionSelect.options[i].value
+            );
+          }
+
+          selectedRow = recordIndex; // Update selectedRow with the correct index
+        }
+      }
+
+      function save() {
+        const name = document.getElementById('name').value;
+        const selectedOptions = Array.from(document.getElementById('testSelect1').selectedOptions).map(option => option.value);
+        const salary = document.getElementById('salary').value;
+        const startDate = document.getElementById('start_date').value;
+        const office = document.getElementById('office').value;
+        const ext = document.getElementById('ext').value;
+
+        if (name != "" && salary != "" && startDate != "" && office != ""
+          && ext != "" && selectedOptions != "") {
+          savefilter();
+        }
+        else {
+          alert("All fields are mandatory to be filled.");
+        }
+      }
+
+
+
+
+      function savefilter() {
+        if (selectedRow !== undefined) {
+          const name = document.getElementById('name').value;
+          const salary = document.getElementById('salary').value;
+          const startDate = document.getElementById('start_date').value;
+          const office = document.getElementById('office').value;
+          const ext = document.getElementById('ext').value;
+
+          const selectedOptions = Array.from(document.getElementById('testSelect1').selectedOptions).map(option => option.value);
+          if (document.getElementById("ck").checked == true) {
+            filteredData[selectedRow].Agreed = "Yes";
+          }
+          else {
+            filteredData[selectedRow].Agreed = "No";
+          }
+          if (document.getElementById("yes").checked == true) {
+            filteredData[selectedRow].Above18 = "Yes";
+          }
+          else {
+            filteredData[selectedRow].Above18 = "No";
+          }
+          filteredData[selectedRow].name = name;
+          filteredData[selectedRow].position = selectedOptions.join(', ');
+          filteredData[selectedRow].salary = salary;
+          filteredData[selectedRow].start_date = startDate;
+          filteredData[selectedRow].office = office;
+          filteredData[selectedRow].extn = ext;
+
+          updateDataTable();
+          resetInputs();
+          selectedRow = undefined;
+        }
+      }
+      function add() {
+        const name = document.getElementById('name').value;
+        const selectedOptions = Array.from(document.getElementById('testSelect1').selectedOptions).map(option => option.value);
+        const salary = document.getElementById('salary').value;
+        const startDate = document.getElementById('start_date').value;
+        const office = document.getElementById('office').value;
+        const ext = document.getElementById('ext').value;
+
+        if (name != "" && salary != "" && startDate != "" && office != ""
+          && ext != "" && selectedOptions != "") {
+          addRecord()
+        }
+        else {
+          alert("All fields are mandatory to be filled.");
+        }
+
+      }
+
+      function addRecord() {
+        const name = document.getElementById('name').value;
+        const selectedOptions = Array.from(document.getElementById('testSelect1').selectedOptions).map(option => option.value);
+        const salary = document.getElementById('salary').value;
+        const startDate = document.getElementById('start_date').value;
+        const office = document.getElementById('office').value;
+        const ext = document.getElementById('ext').value;
+
+        let check, radio;
+        if (document.getElementById("ck").checked == true) {
+          check = "Yes";
+        }
+        else {
+          check = "No";
+        }
+        if (document.getElementById("yes").checked == true) {
+          radio = "Yes";
+        }
+        else {
+          radio = "No";
+        }
+        const newRecord = {
+          id: (filteredData.length + 1).toString(),
+          name: name,
+          position: selectedOptions.join(', '),
+          salary: salary,
+          start_date: startDate,
+          office: office,
+          extn: ext,
+          Above18: radio,
+          Agreed: check
+        };
+
+        filteredData.push(newRecord);
+        updateDataTable();
+        document.getElementById('searchName').value = newRecord.name;
+        selectedRow = undefined; // Clear the selected row
+        resetInputs(); // Clear input fields
+      }
+
+      function reset() {
+        resetInputs();
+        filteredData = data;
+        document.getElementById('search_date').value="";
+        location.reload();
+        updateDataTable();
+      }
+
+      function applyFilter() {
+          const selectedOptions = Array.from(document.getElementById('pos').selectedOptions).map(option => option.value).join(', ');
+          const officeFilter = document.getElementById('office').value;
+          const salaryFilter = document.getElementById('salary').value;
+          const startDateFilter = document.getElementById('search_date').value;
+          const extFilter = document.getElementById('ext').value;
+          const nameFilter = document.getElementById('searchName').value;
+
+          filteredData = filteredData.filter(item => {
+            return selectedOptions.includes(item.position)
+              && item.start_date.includes(startDateFilter) && item.name.includes(nameFilter);
+          });
+
+          updateDataTable();
+          resetInputs();
+        } 
+
+
+
+
+
+
+
+
+      let selectedRow;
+
+
+
+      function resetInputs() {
+
+        document.getElementById("name").value = "";
+        const posSelect = document.getElementById("testSelect1");
+        for (let i = 0; i < posSelect.options.length; i++) {
+          posSelect.options[i].selected = false;
+        }
+
+        document.getElementById("salary").value = "";
+        document.getElementById("start_date").value = "";
+        document.getElementById("office").value = "";
+        document.getElementById("ext").value = "";
+
+      }
+
+
+
+      function customSearch() {
+          const nameSearch = document.getElementById('searchName').value;
+          const dateSearch = document.getElementById('search_date').value;
+          const posSelect = document.getElementById('pos');
+          let posSearch = '';
+
+         
+          for (let i = 0; i < posSelect.options.length; i++) {
+            if (posSelect.options[i].selected) {
+              if (posSearch !== '') {
+                posSearch += ', ';
+              }
+              posSearch += posSelect.options[i].value;
+            }
+          }
+
+    
+          $('#dataTable').DataTable().search(nameSearch + ' ' + dateSearch + ' ' + posSearch).draw();
+        }
+
+
+
+      $(document).ready(function () {
+        initializeDataTable();
+
+
+        $('#searchName, #search_date, #pos').on('keyup', function () {
+          customSearch();
+        });
+      });
+      function initializeDataTable() {
+        var table = $('#dataTable').DataTable({
+          data: filteredData,
+          searching: true,
+          columns: [
+            { data: "name" },
+            { data: "position" },
+            { data: "salary" },
+            { data: "start_date" },
+            { data: "office" },
+            { data: "extn" },
+            { data: "Above18" },
+            { data: "Agreed" },
+            {
+              data: null,
+              render: function (data, type, row) {
+                return `
+          <div class="actions">
+            <button class="btn btn-primary btn-sm" onclick="editRecordByValues(${data.id - 1})" style="margin-right: 5px; margin-left: 10px;">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteRecordByValues(${data.id - 1})">Delete</button>
+          </div>`;
+              }
+            }
+          ],
+          paging: true,
+          pageLength: 20,
+          lengthMenu: [20, 50],
+        });
+      }
+
+
+
+
+    </script>
+</body>
+
+</html>

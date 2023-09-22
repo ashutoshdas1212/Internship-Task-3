@@ -1,0 +1,39 @@
+body {
+    
+    text-align: center;
+   
+}
+
+.class {
+    -webkit-user-select: none;
+    position: relative;
+}
+
+.displayText {
+    position: absolute;
+    bottom: -230%;
+    left: 50%;
+    margin-left: -80px;
+    width: 160px;
+    background-color: aqua;
+    color: #fff;
+    color: red;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    visibility: hidden;
+}
+
+    .displayText::before {
+        content: "";
+        border-width: 5px;
+        border-style: solid;
+        top: -28%;
+        left: 45%;
+        border-color: transparent transparent yellow transparent;
+        position: absolute;
+    }
+
+.show {
+    visibility: visible;
+}
